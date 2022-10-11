@@ -4,6 +4,7 @@ by: (based on 3-square.py)
 
 """
 
+
 class Square:
     """Square class with a private attribute -
     size.
