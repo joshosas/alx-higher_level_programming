@@ -1,29 +1,18 @@
 #!/usr/bin/python3
-"""Geometry Module
-
+"""
+Contains the class BaseGeometry
 """
 
 
 class BaseGeometry:
-    """An empty class"""
-
+    """A class with public instance methods area and integer_validator"""
     def area(self):
-        """Raises an exception because...
-        area is not implemented
-
-        """
+        """raises an exception when called"""
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """Validates the inputs: name and values
-
-        Args:
-            name(str) - input name as string
-            value(int): pararams validator
-
-        """
-        if type(value) != int:
-            raise TypeError("{} must be an integer".format(name))
+        """validates that value is an integer greater than 0"""
+        if type(value) is not int:
+            raise TypeError("{:s} must be an integer".format(name))
         if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
-        return value
+            raise ValueError("{:s} must be greater than 0".format(name))
