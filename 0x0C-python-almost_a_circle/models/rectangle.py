@@ -109,13 +109,12 @@ class Rectangle(Base):
 
         """
         print("\n" * self.y,  end="")
-        print((" " * self.x + "#" * self.__width + '\n') * self.__height, end="")
+        print((" "*self.x+"#" * self.__width + '\n') * self.__height, end="")
 
     def __str__(self):
         """String representation of the rectangle class"""
-        str_res = "[Rectangle] ({}) {}/{} - {}/{}"\
+        return "[Rectangle] ({}) {}/{} - {}/{}"\
             .format(self.id, self.x, self.y, self.__width, self.__height)
-        return str_res
 
     def update(self, *args, **kwargs):
         """Updates rectangle class and
