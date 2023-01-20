@@ -5,7 +5,6 @@ takes in a URL, sends a request to the URL & displays the body of the response
 if __name__ == "__main__":
     import sys
     import urllib.request
-    
     url = sys.argv[1]
     try:
         with urllib.request.urlopen(url) as res:

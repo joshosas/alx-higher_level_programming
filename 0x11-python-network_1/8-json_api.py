@@ -6,7 +6,7 @@ with the letter as a parameter
 if __name__ == '__main__':
     from sys import argv
     import requests
-    import json 
+    import json
 
     url = 'http://0.0.0.0:5000/search_user'
     letter = argv[1] or ""
