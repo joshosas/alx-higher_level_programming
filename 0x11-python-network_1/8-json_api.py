@@ -4,20 +4,22 @@ takes in a letter and sends a POST request to http://0.0.0.0:5000/search_user
 with the letter as a parameter
 """
 if __name__ == '__main__':
-    import requests
     from sys import argv
-    if len(argv) == 2:
-        q = argv[1]
-    else:
-        q = ""
-    r = requests.post('http://0.0.0.0:5000/search_user', data={'q': q})
+    import requests
+    import json 
+
+    url = 'http://0.0.0.0:5000/search_user'
+    letter = argv[1] or ""
+    data = {'q': letter}
+
+    res = requests.post(url, json=data)
+
     try:
-        r_dict = r.json()
-        id = r_dict.get('id')
-        name = r_dict.get('name')
-        if len(r_dict) == 0 or not id or not name:
-            print("No result")
+        json_response = json.loads(response.text)
+        if json_response:
+            for item in json_response:
+                print(f"[{item['id']}] {item['name']}")
         else:
-            print("[{}] {}".format(r_dict.get('id'), r_dict.get('name')))
-    except:
+            print("No result")
+    except json.decoder.JSONDecodeError:
         print("Not a valid JSON")
