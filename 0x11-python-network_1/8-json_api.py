@@ -8,11 +8,8 @@ if __name__ == '__main__':
     import requests
 
     url = 'http://0.0.0.0:5000/search_user'
-    if argv > 2:
-        letter = argv[1]
-        q = {'q': letter}
-    else:
-        q = ""
+    q = argv[1] or ""
+    q = {'q': q}
 
     res = requests.post(url, json=q)
 

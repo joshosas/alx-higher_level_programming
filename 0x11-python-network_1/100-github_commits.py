@@ -1,18 +1,17 @@
 #!/usr/bin/python3
 """
-list 10 commits (from the most recent to oldest) 
+list 10 commits (from the most recent to oldest)
 of the repository “rails” by the user “rails”
 """
-from sys import argv
-import requests
-
-
 if __name__ == "__main__":
-    r = requests.get('https://api.github.com/repos/{}/{}/commits'
-                     .format(argv[2], argv[1]))
-    l = r.json()
-    try:
-        for i in range(10):
-            print(l[i]
-    except:
-        pass
+    import requests
+    import sys
+
+    repo = sys.argv[1]
+    ownr = sys.argv[2]
+
+    res = requests.get(f'https://api.github.com/repos/{ownr}/{repo}/commits')
+    commits = res.json()
+
+    for commit in commits[:10]:
+        print(f'{commit["sha"]}: {commit["commit"]["author"]["name"]}')

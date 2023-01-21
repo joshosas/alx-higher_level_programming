@@ -9,4 +9,3 @@ if __name__ == '__main__':
     print("Body response:$")
     print(f"\t- content: {res.headers['content-type']}$")
     print(f"\t- content: {text}")
-
