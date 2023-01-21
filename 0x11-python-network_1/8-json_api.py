@@ -6,16 +6,18 @@ with the letter as a parameter
 if __name__ == '__main__':
     from sys import argv
     import requests
-    import json
 
     url = 'http://0.0.0.0:5000/search_user'
-    letter = argv[1] or ""
-    data = {'q': letter}
+    if argv > 2:
+        letter = argv[1]
+        q = {'q': letter}
+    else:
+        q = ""
 
-    res = requests.post(url, json=data)
+    res = requests.post(url, json=q)
 
     try:
-        json_response = json.loads(response.text)
+        json_response = json.loads(res.text)
         if json_response:
             for item in json_response:
                 print(f"[{item['id']}] {item['name']}")
