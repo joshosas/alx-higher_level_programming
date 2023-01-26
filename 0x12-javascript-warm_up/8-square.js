@@ -18,4 +18,3 @@ for (let i = 0; i < inputSize; i++) {
   }
 }
 console.log(squareIndicator);
-

@@ -18,4 +18,3 @@ if (process.argv.length < 4) {
   });
   console.log(secondElement);
 }
-

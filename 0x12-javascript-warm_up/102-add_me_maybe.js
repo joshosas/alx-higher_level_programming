@@ -7,4 +7,3 @@ function addMeMaybe (n, func) {
 module.exports = {
   addMeMaybe: addMeMaybe
 };
-

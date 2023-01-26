@@ -10,4 +10,3 @@ while (argsCount < userArgs) {
   console.log('C is fun');
   argsCount++;
 }
-

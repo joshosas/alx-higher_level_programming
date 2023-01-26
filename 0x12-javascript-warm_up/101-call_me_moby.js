@@ -8,4 +8,3 @@ function callMeMoby (n, func) {
 module.exports = {
   callMeMoby: callMeMoby
 };
-

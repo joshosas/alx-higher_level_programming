@@ -10,4 +10,3 @@ function factorial (num) {
   return (factorial(num - 1) * num);
 }
 console.log(factorial(parseInt(process.argv[2])));
-
