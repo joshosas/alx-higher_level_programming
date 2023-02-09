@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const request = require('request');
-let url = 'http://swapi.co/api/films/';
 let episode = process.argv[2];
+let url = `http://swapi.co/api/films/${episode}`;
 request(url + episode, function (err, res, body) {
   if (err) {
     console.log(err);
