@@ -10,7 +10,9 @@ request(url, (err, res, body) => {
   const wedgeAntilles = 'https://swapi-api.alx-tools.com/api/people/18/';
   let count = 0;
   for (const movie of films) {
-    if (movie.characters.includes(wedgeAntilles)) count++;
+    if (movie.characters.includes(wedgeAntilles)) {
+      count++;
+    }
   }
   console.log(count);
 });
